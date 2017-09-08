@@ -1,5 +1,3 @@
-const port = 3001
-
 const bodyParser = require('body-parser')
 const express = require('express')
 const server = express()
@@ -9,8 +7,8 @@ server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 server.use(queryParser())
 
-server.listen(port, function() {
-    console.log(`BACKEND is running on port ${port}.`)
-})
+server.listen(process.env.PORT ? process.env.PORT : 3001, function () {
+    console.log("Express server listening on port " + (process.env.PORT ? process.env.PORT : 3001));
+});
 
 module.exports = server
