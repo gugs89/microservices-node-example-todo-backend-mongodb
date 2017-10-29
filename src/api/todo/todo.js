@@ -3,6 +3,7 @@ const mongoose = restful.mongoose
 
 const todoSchema = new mongoose.Schema({
     description: { type: String, required: true, index: true },
+    number: { type: Number, min: 18, max: 65, required: true, index: true },
     done: { type: Boolean, required: true, default: false },
     createdAt: { type: Date, default: Date.now, index: true }
 })
