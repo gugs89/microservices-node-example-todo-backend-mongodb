@@ -11,7 +11,7 @@ mongoose.Error.messages = {
 	},
 	Number: {
 		min: "'{VALUE}' is lower then '{MIN}'.",
-		max: "'{VALUE}' informado é maior que o limite máximo de '{MAX}'."
+		max: "'{VALUE}' is greather then '{MAX}'."
 	},
 	String: {
 		enum: "'{VALUE}' is not valid for attribute '{PATH}'."
