@@ -10,6 +10,7 @@ WORKDIR /app
 
 COPY package.json /app/
 RUN npm install
+# --only=production
 
 COPY src /app/src
 
