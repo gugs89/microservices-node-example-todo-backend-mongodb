@@ -3,7 +3,7 @@ mongoose.Promise = global.Promise
 module.exports = mongoose.connect('mongodb://' + 
 		(process.env.MONGODB ? process.env.MONGODB : 'localhost') + ':' + 
 		(process.env.MONGODB_PORT ? process.env.MONGODB_PORT : '27017') +
-		'/todo', { useMongoClient: true })
+		'/todo')
 
 mongoose.Error.messages = {
 	general: {
