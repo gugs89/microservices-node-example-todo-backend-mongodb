@@ -14,10 +14,6 @@ function getDBPort() {
 	return process.env.MONGODB_PORT ? process.env.MONGODB_PORT : '27017'
 }
 
-
-var connectionURL = 'mongodb://' + getDBAuthentication() + ;
-
-
 module.exports = mongoose.connect('mongodb://' + 
 		getDBAuthentication() +
 		getDBURL() + ':' +
