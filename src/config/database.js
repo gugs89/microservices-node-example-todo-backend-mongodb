@@ -1,8 +1,27 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
+
+function getDBAuthentication() {
+	return process.env.MONGODB_USER && process.env.MONGODB_PASS ?
+		 process.env.MONGODB_USER + ':'+ process.env.MONGODB_PASS + '@'
+		 : ''
+}
+
+function getDBURL() {
+	return process.env.MONGODB ? process.env.MONGODB : 'localhost'
+}
+function getDBPort() {
+	return process.env.MONGODB_PORT ? process.env.MONGODB_PORT : '27017'
+}
+
+
+var connectionURL = 'mongodb://' + getDBAuthentication() + ;
+
+
 module.exports = mongoose.connect('mongodb://' + 
-		(process.env.MONGODB ? process.env.MONGODB : 'localhost') + ':' + 
-		(process.env.MONGODB_PORT ? process.env.MONGODB_PORT : '27017') +
+		getDBAuthentication() +
+		getDBURL() + ':' +
+		getDBPort() + 
 		'/todo')
 
 mongoose.Error.messages = {
