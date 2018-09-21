@@ -1,15 +1,17 @@
 const express = require('express')
+var todoController = require('../api/todo/todoController');
 
 module.exports = function(server) {
 
-    const router = express.Router()
-    server.use('/', router)
+    const router = new express.Router()
 
-
-    server.get('/health_check', function(req, res) {
+    router.get('/health_check', function(req, res) {
         res.send("OK");
     });
     
-    const todo = require('../api/todo/todoService')
-    todo.register(router, '/todo')
+    const todo = require('../api/todo/todoRoute');
+    router.use('/todo', todo);
+
+    server.use('/', router)
+        
 }
