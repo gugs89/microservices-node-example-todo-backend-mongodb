@@ -1,0 +1,10 @@
+{
+  "mongodb": {
+    "name": "mongodb",
+    "connector": "mongodb",
+    "url": "",
+    "host": "${MONGODB}",
+    "port": 27017,
+    "database": "todo"
+  }
+}
