@@ -4,8 +4,8 @@
     "connector": "mongodb",
     "url": "",
     "host": "${MONGODB}",
-    "username": "admin",
-    "password": "adminadmin",
+    "username": "${MONGODB_USER}",
+    "password": "${MONGODB_PASSWORD}",
     "port": 27017,
     "database": "todo"
   }
