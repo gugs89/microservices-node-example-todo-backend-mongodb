@@ -2,9 +2,9 @@
 let fs = require('fs');
 var ca = fs.readFileSync(__dirname + '/rds-combined-ca-bundle.pem', 'utf8');
 var datasource = {
-  host: 'dbcluster-k32jythdhppo.cluster-ck8umzpmv3ua.us-east-1.docdb.amazonaws.com',
-  username: 'myuser',
-  password: 'mypasswordfromuser',
+  host: '${MONGODB}',
+  username: '${MONGODB_USER}',
+  password: '${MONGODB_PASSWORD}',
   connector: 'mongodb',
   server: {
     ssl: true,
